@@ -11,7 +11,7 @@
                 <a href="#">Home</a>
                 <a href="#">Events</a>
                 <a href="Services.php">Services</a>
-                <a href="#">Contact</a>
+                <a href="contactus.php">Contact</a>
             </nav>
 
             <style>
@@ -35,7 +35,7 @@
                     font-size: 18px;
                 }
 
-                /* Simple HERO SECTION */
+               
                 .a{
                     display: flex;
                     align-items: center;
