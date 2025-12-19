@@ -9,7 +9,7 @@
         <header>
             <nav>
                 <a href="#">Home</a>
-                <a href="#">Events</a>
+                <a href="events.php">Events</a>
                 <a href="Services.php">Services</a>
                 <a href="contactus.php">Contact</a>
             </nav>
@@ -18,8 +18,7 @@
                 body{
                     background-color: #f4f4f4;
                     font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
+                    
                 }
 
                 nav{
