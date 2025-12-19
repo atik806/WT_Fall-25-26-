@@ -10,7 +10,7 @@
             <nav>
                 <a href="#">Home</a>
                 <a href="#">Events</a>
-                <a href="#">Services</a>
+                <a href="Services.php">Services</a>
                 <a href="#">Contact</a>
             </nav>
 
@@ -97,7 +97,7 @@
 
 
         <section class= "b">
-            <h2>Out Features</h2>
+            <h2>Our Features</h2>
             <div class = "feature">
                 <h3>Event Planning</h3>
                 <p>Organize and schedule events with ease using our intuitive planning tools.</p>
