@@ -51,6 +51,7 @@
             cursor: pointer;
             font-size: 16px;
             margin: 5px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -63,13 +64,13 @@
 
             <h2>Login</h2>
 
-            <table width="100%">
+            <table>
                 <tr>
                     <td class="a">Email</td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" name="email" placeholder="Enter your email">
+                        <input type="text" name="email" placeholder="Enter your email"><br><br>
                     </td>
                 </tr>
 
@@ -78,14 +79,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="password" name="password" placeholder="Enter your password">
+                        <input type="password" name="password" placeholder="Enter your password"><br><br>
                     </td>
                 </tr>
             </table>
 
             <center>
                 <input type="submit" class="button" value="Login">
-                <input type="submit" class="button" value="Register">
+                <a href="register.php" class="button">Register</a>
             </center>
 
         </fieldset>
