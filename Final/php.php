@@ -130,9 +130,8 @@ Blood Group:
 </select>
 <br><br>
 <input type="submit" name="submit" value="Submit">
+
 <?php   
-
-
 if($_SERVER["REQUEST_METHOD"]== "POST" && empty($nameerror))
 {
 echo "<h3> Your Input: </h3>";
