@@ -129,7 +129,7 @@ Blood Group:
 </form>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" &&
+if ($_SERVER["REQUEST_METHOD"] == "POST" &&     
     empty($nameerror) && empty($ageerror) && empty($emailerror) &&
     empty($doberror) && empty($gendererror) && empty($degreeerror) && empty($blooderror)) {
 
