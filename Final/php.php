@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head><title>PHP Code</title></head>
+<head>
+    <title>PHP Code</title>
+</head>
 <body>
-<h1> Welcome to Registration</h1>
- 
+
+<h1>Welcome to Registration</h1>
+
 <?php
-$name = "";
-$age = "";
-$email = "";
-$dob = "";
-$gender = "";
-$nameerror = "";
-$ageerror = "";
-$emailerror = "";
-$doberror = "";
-$gendererror = "";
+$name = $age = $email = $dob = $gender = $bloodgroup = "";
+$degree = [];
+
+$nameerror = $ageerror = $emailerror = $doberror = $gendererror = $degreeerror = $blooderror = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    //name validation
+    // Name validation
     if (empty($_POST["name"])) {
         $nameerror = "Name is required";
     } else {
         $name = test_input($_POST["name"]);
-                if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-            $nameerror = "Only letters and white space allowed<br>";
-        } 
-        
-        elseif (str_word_count($name) < 2) {
-            $nameerror = "Name must contain at least two words";
+        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            $nameerror = "Only letters and spaces allowed";
+        } elseif (str_word_count($name) < 2) {
+            $nameerror = "At least two words required";
         }
     }
 
-    // age validation
+    // Age validation
     if (empty($_POST["age"])) {
         $ageerror = "Age is required";
     } else {
         $age = test_input($_POST["age"]);
-        if (!is_numeric($age)) {
-            $ageerror = "Only numbers are allowed";
-        } elseif ($age < 1 || $age > 150) { 
-            $ageerror = "Age must be between 1 and 150";
+        if (!is_numeric($age) || $age < 1 || $age > 150) {
+            $ageerror = "Invalid age";
         }
     }
 
-    //email validation
-    if(empty($_POST["email"])){
-        $emailerror = "Cannot be empty";
-    }else{
-        $email =preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $_POST["email"]);
-        if(!$email){
+    // Email validation
+    if (empty($_POST["email"])) {
+        $emailerror = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailerror = "Invalid email format";
         }
-
     }
-    // date of birth validation
-    if(empty($_POST["dob"])){
+
+    // DOB validation
+    if (empty($_POST["dob"])) {
         $doberror = "Date of Birth is required";
-    }else{
-        $dob = test_input($_POST["dob"]);
+    } else {
+        $dob = $_POST["dob"];
     }
 
-    //gender validation
-    if(empty($_POST["gender"])){
+    // Gender validation
+    if (empty($_POST["gender"])) {
         $gendererror = "Gender is required";
-    }else{
-        $gender = test_input($_POST["gender"]);     
+    } else {
+        $gender = $_POST["gender"];
+    }
+
+    // Degree validation
+    if (empty($_POST["degree"])) {
+        $degreeerror = "Select at least one degree";
+    } else {
+        $degree = $_POST["degree"];
+    }
+
+    // Blood group validation
+    if ($_POST["bloodgroup"] == "") {
+        $blooderror = "Blood group required";
+    } else {
+        $bloodgroup = $_POST["bloodgroup"];
     }
 }
 
@@ -74,75 +81,68 @@ function test_input($data) {
 }
 ?>
 
- 
-<form method="post" action="">
-Name: 
-<input type="text" name="name" value="<?php echo $name;?>">
-<?php echo $nameerror; ?>
-<br><br>
+<form method="post">
 
-Age: 
-<input type="number" name="age" value="<?php echo $age;?>">
-<?php echo $ageerror; ?>
+Name:
+<input type="text" name="name" value="<?php echo $name; ?>">
+<?php echo $nameerror; ?><br><br>
 
-<br><br>
+Age:
+<input type="number" name="age" value="<?php echo $age; ?>">
+<?php echo $ageerror; ?><br><br>
 
-Email: 
-
-<input type="email" name="email" value="<?php echo $email;?>">
-<?php echo $emailerror; ?>
-
-<br><br>
+Email:
+<input type="email" name="email" value="<?php echo $email; ?>">
+<?php echo $emailerror; ?><br><br>
 
 Date of Birth:
-<input type="date" name="dob" value="<?php echo date('Y-m-d'); ?>">
+<input type="date" name="dob">
 <?php echo $doberror; ?><br><br>
 
-<br><br>
-
 Gender:
-<input type="radio" name="gender" value="male"> Male
-<input type="radio" name="gender" value="female"> Female
-<input type="radio" name="gender" value="other"> Other
-<br><br>
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<input type="radio" name="gender" value="Other"> Other
+<?php echo $gendererror; ?><br><br>
 
-
-
-Degree: 
-<input type="checkbox" name="degree" value="HSC"> HSC
-<input type="checkbox" name="degree" value="BSc"> BSc
-<input type="checkbox" name="degree" value="MSc"> MSc
-
-   
-<br><br>
+Degree:
+<input type="checkbox" name="degree[]" value="HSC"> HSC
+<input type="checkbox" name="degree[]" value="BSc"> BSc
+<input type="checkbox" name="degree[]" value="MSc"> MSc
+<?php echo $degreeerror; ?><br><br>
 
 Blood Group:
 <select name="bloodgroup">
-    <option value="-----------------">-------------------------</option>
-  <option value="A+">A+</option>
-  <option value="A-">A-</option>
-  <option value="B+">B+</option>
-  <option value="B-">B-</option>
-  <option value="O+">O+</option>
-  <option value="O-">O-</option>
-  <option value="AB+">AB+</option>
-  <option value="AB-">AB-</option>
+    <option value="">Select</option>
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
 </select>
-<br><br>
-<input type="submit" name="submit" value="Submit">
+<?php echo $blooderror; ?><br><br>
 
-<?php   
-if($_SERVER["REQUEST_METHOD"]== "POST" && empty($nameerror))
-{
-echo "<h3> Your Input: </h3>";
-echo "Name: ".$name. "<br>";
-echo "Age: ".$age. "<br>";
-echo "Email: ".$email. "<br>";
-echo "Date of Birth: ".$dob. "<br>";
+<input type="submit" value="Submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" &&
+    empty($nameerror) && empty($ageerror) && empty($emailerror) &&
+    empty($doberror) && empty($gendererror) && empty($degreeerror) && empty($blooderror)) {
+
+    echo "<h3>Your Input:</h3>";
+    echo "Name: $name <br>";
+    echo "Age: $age <br>";
+    echo "Email: $email <br>";
+    echo "DOB: $dob <br>";
+    echo "Gender: $gender <br>";
+    echo "Degree: " . implode(", ", $degree) . "<br>";
+    echo "Blood Group: $bloodgroup <br>";
 }
 ?>
- 
- 
+
 </body>
-</form>
 </html>
