@@ -3,7 +3,7 @@
     <title>
         OEMS
     </title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/landingpage.css">
 
     <body>
         <header>
