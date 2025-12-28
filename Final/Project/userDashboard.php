@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>User Dashboard</title>
-    <style>
-        body {
+<style>
+body {  
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f6f8;
@@ -71,7 +71,7 @@
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    
 }
 
 th, td {
@@ -83,13 +83,20 @@ th, td {
 th {
     background: #ecf0f1;
 }
+h2{
+    color: #acacacff;
+    align-items: center;
+}
 
-    </style>
+</style>
 </head>
 <body>
 
 <div class="navbar">
-    <h2>Event Management System</h2>
+    <center>
+        <h2>Event Management System</h2>
+    </center>
+    
     <a href="login.php">Logout</a>
 </div>
 
@@ -103,51 +110,10 @@ th {
         <a href="#">Profile</a>
     </div>
 
-    <div class="content">
-        <h1>Welcome, User 👋</h1>
+    
 
-        <div class="cards">
-            <div class="card">
-                <h3>Total Events</h3>
-                <p>12</p>
-            </div>
-
-            <div class="card">
-                <h3>My Bookings</h3>
-                <p>5</p>
-            </div>
-
-            <div class="card">
-                <h3>Pending Requests</h3>
-                <p>2</p>
-            </div>
-        </div>
-
-        <div class="table-box">
-            <h2>Upcoming Events</h2>
-            <table>
-                <tr>
-                    <th>Event Name</th>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Status</th>
-                </tr>
-                <tr>
-                    <td>Tech Conference</td>
-                    <td>20 Jan 2026</td>
-                    <td>Dhaka</td>
-                    <td>Booked</td>
-                </tr>
-                <tr>
-                    <td>Music Fest</td>
-                    <td>5 Feb 2026</td>
-                    <td>Chittagong</td>
-                    <td>Available</td>
-                </tr>
-            </table>
-        </div>
-
-    </div>
+        
+    
 
 </div>
 
