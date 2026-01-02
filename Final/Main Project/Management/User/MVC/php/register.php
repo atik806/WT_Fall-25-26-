@@ -3,7 +3,7 @@
 include "../db/db.php";
 
 $success = "";
-$error = "";563
+$error = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $fullname = trim($_POST['fullname']);
@@ -34,12 +34,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if ($conn->query($sql)) {
         $success = "Registration successful!";  
-        
+        header("Location: ../html/login.php");
+        exit();
 
     } else {
         $error="ERROR ". $conn->error;
     }
 
+
     $conn->close();
+    echo $success;
+    echo $error;    
+    
+
+
 }
 ?>

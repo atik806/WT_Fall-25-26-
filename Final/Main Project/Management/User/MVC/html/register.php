@@ -13,7 +13,8 @@
     <div class="a">
         <h2>Create Account</h2>
 
-        <form method="POST" action="register.php">
+        <form method="POST" action="../php/register.php">
+
 
     <label>Full Name</label>
     <input type="text" name="fullname" placeholder="Enter your name" required>
