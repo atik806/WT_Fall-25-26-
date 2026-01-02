@@ -9,11 +9,13 @@
 
 <body>
 
-    
 
+
+  
 
 
     <center>
+        <h2 class="w">Welcome to Event Organization</h2><br><br>
         <fieldset>
 
             <legend>Welcome back, please login</legend>

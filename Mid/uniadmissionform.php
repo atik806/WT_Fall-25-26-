@@ -5,6 +5,12 @@
         </title>
     </head>
     <style>
+        body{
+            background-color: #9bb4c9ff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            
+        }
         fieldset {
             margin-bottom: 15px;
             padding: 10px;

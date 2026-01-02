@@ -3,7 +3,8 @@
 include "../db/db.php";
 
 $success = "";
-$error = "";
+$error = "";563
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $fullname = trim($_POST['fullname']);
     $phone = trim($_POST['phone']);
