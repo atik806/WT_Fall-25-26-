@@ -9,21 +9,21 @@
     <div class="event-form">
         <h2>Create Event</h2>
 
-        <form>
+        <form method="POST" action="../php/createEvent.php">  
             <label>Event Name</label><br>
-            <input type="text" placeholder="Enter event name"><br><br>
+            <input type="text" name="eventName" placeholder="Enter event name"><br><br>
 
             <label>Date</label><br>
-            <input type="date"><br><br>
+            <input type="date" name="eventDate"><br><br>
 
             <label>Time</label><br>
-            <input type="time"><br><br>
+            <input type="time" name="eventTime"><br><br>
 
             <label>Location</label><br>
-            <input type="text" placeholder="Enter location"><br><br>
+            <input type="text" name="eventLocation" placeholder="Enter location"><br><br>
 
             <label>Description</label><br>
-            <textarea placeholder="Event description"></textarea><br><br>
+            <textarea name="eventDescription" placeholder="Event description"></textarea><br><br>
 
             <button type="submit">Create Event</button>
         </form>
