@@ -1,13 +1,12 @@
-body {
-    display: flex;
-    background-color: #f4f6f9;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    background-color: #f4f6f9;
 }
 .a {
     width: 240px;
@@ -21,25 +20,35 @@ body {
     text-align: center;
     margin-bottom: 30px;
 }
-
 .a ul {
     list-style: none;
 }
 
 .a ul li {
-    padding: 12px;
     margin-bottom: 10px;
-    cursor: pointer;
+}
+
+.a ul li a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
     border-radius: 6px;
 }
 
-
-
-.logout {
+.a ul li a:hover {
+    background-color: #00509e;
+}
+.a ul li.active a {
+    background-color: #004080;
+}
+.logout a {
     background-color: #b30000;
 }
 
-
+.logout a:hover {
+    background-color: #800000;
+}
 .main {
     flex: 1;
     padding: 20px;

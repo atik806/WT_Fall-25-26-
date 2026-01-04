@@ -8,16 +8,17 @@
 
     <div class="a">
         <h2>EventOrg</h2>
-        <ul>
-            <li class="c">Dashboard</li>
-            <li>My Events</li>
-            <li>Create Event</li>
-            <li>Participants</li>
-            <li>Tickets</li>
-            <li>Payments</li>
-            <li>Settings</li>
-            <li class="logout">Logout</li>
-        </ul>
+        <nav class = "z">
+            <ul>
+                <li class="active"><a href="organizerDashboard.php">Dashboard</a></li>
+                <li><a href="createEvent.php">Create Event</a></li>
+                <li><a href="#">Manage Events</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+
+        </nav>
     </div>
 
    
