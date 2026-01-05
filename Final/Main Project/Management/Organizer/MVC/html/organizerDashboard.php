@@ -1,3 +1,13 @@
+<?php
+session_start();
+include "../db/db.php";
+
+// Check if organizer is logged in
+if (!isset($_SESSION['id'])) {
+    header("Location: ../html/login.php");
+    exit();
+}
+?>
 
 
 <!DOCTYPE html>

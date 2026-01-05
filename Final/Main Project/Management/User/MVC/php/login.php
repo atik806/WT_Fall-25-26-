@@ -6,39 +6,58 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     die("Invalid request");
 }
 
-if (
-    !isset($_POST['email'], $_POST['password']) ||
-    trim($_POST['email']) === '' ||
-    trim($_POST['password']) === ''
-) {
-    die("Missing value in the form!");
-}
-
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
 
-$sql = "SELECT * FROM user WHERE email = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows !== 1) {
-    die("Invalid email or password");
+if ($email === '' || $password === '') {
+    die("Email and password are required");
 }
 
-$user = $result->fetch_assoc();
+// -------------------- USER LOGIN (hashed password) --------------------
+$sqlUser = "SELECT * FROM user WHERE email = ?";
+$stmtUser = $conn->prepare($sqlUser);
+$stmtUser->bind_param("s", $email);
+$stmtUser->execute();
+$resultUser = $stmtUser->get_result();
 
+if ($resultUser->num_rows === 1) {
+    $user = $resultUser->fetch_assoc();
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_name'] = $user['fullname'];
+        $_SESSION['user_email'] = $user['email'];
 
-if (!password_verify($password, $user['password'])) {
-    die("Invalid email or password");
+        header("Location: ../html/userDashboard.php");
+        exit();
+    } else {
+        die("Invalid email or password");
+    }
 }
 
+// -------------------- ORGANIZER LOGIN (plain password) --------------------
+$sqlOrg = "SELECT * FROM organizer WHERE email = ?";
+$stmtOrg = $conn->prepare($sqlOrg);
+$stmtOrg->bind_param("s", $email);
+$stmtOrg->execute();
+$resultOrg = $stmtOrg->get_result();
 
-$_SESSION['user_id'] = $user['id'];
-$_SESSION['email']   = $user['email'];
-$_SESSION['username'] = $user['fullname']; 
+if ($resultOrg->num_rows === 1) {
+    $organizer = $resultOrg->fetch_assoc();
+    if ($password === $organizer['password']) {
+        $_SESSION['organizer_id'] = $organizer['id'];
+        $_SESSION['organizer_name'] = $organizer['fullname'];
+        $_SESSION['organizer_email'] = $organizer['email'];
 
+        // Optional debug: check if session is set
+        // echo '<pre>'; print_r($_SESSION); echo '</pre>'; exit();
 
-header("Location: ../html/userDashboard.php");
-exit();
+        header("Location: ../html/organizerDashboard.php");
+        exit();
+    } else {
+        die("Invalid email or password");
+    }
+}
+
+// -------------------- NO MATCH --------------------
+die("Invalid email or password");
+?>
