@@ -29,12 +29,16 @@ if ($result->num_rows !== 1) {
 
 $user = $result->fetch_assoc();
 
+
 if (!password_verify($password, $user['password'])) {
     die("Invalid email or password");
 }
 
+
 $_SESSION['user_id'] = $user['id'];
 $_SESSION['email']   = $user['email'];
+$_SESSION['username'] = $user['fullname']; 
+
 
 header("Location: ../html/userDashboard.php");
 exit();
