@@ -25,6 +25,13 @@
             <label>Description</label><br>
             <textarea name="eventDescription" placeholder="Event description"></textarea><br><br>
 
+            <label>All approved Users</label><br>
+            <select name="approvedUsers[]" multiple>
+                <!--all approved user will be shown here-->
+                
+            </select><br><br>
+            
+
             <button type="submit">Create Event</button>
         </form>
     </div>
