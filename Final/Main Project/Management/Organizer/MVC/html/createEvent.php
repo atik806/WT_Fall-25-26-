@@ -1,3 +1,23 @@
+<?php
+session_start();
+include "../db/db.php";
+
+if (!isset($_SESSION['id'])) {
+    header("Location: ../html/login.php");
+    exit();
+}
+
+$sql = "SELECT id, fullname, email 
+        FROM `user` 
+        WHERE request_status = 'Accepted'";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("Query Failed: " . $conn->error);
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,35 +26,42 @@
 </head>
 <body>
 
-    <div class="event-form">
-        <h2>Create Event</h2>
+<div class="event-form">
+    <h2>Create Event</h2>
 
-        <form method="POST" action="../php/createEvent.php">  
-            <label>Event Name</label><br>
-            <input type="text" name="eventName" placeholder="Enter event name"><br><br>
+    <form method="POST" action="../php/createEvent.php">
 
-            <label>Date</label><br>
-            <input type="date" name="eventDate"><br><br>
+        <label>Event Name</label>
+        <input type="text" name="eventName" required>
 
-            <label>Time</label><br>
-            <input type="time" name="eventTime"><br><br>
+        <label>Date</label>
+        <input type="date" name="eventDate" required>
 
-            <label>Location</label><br>
-            <input type="text" name="eventLocation" placeholder="Enter location"><br><br>
+        <label>Time</label>
+        <input type="time" name="eventTime" required>
 
-            <label>Description</label><br>
-            <textarea name="eventDescription" placeholder="Event description"></textarea><br><br>
+        <label>Location</label>
+        <input type="text" name="eventLocation" required>
 
-            <label>All approved Users</label><br>
-            <select name="approvedUsers[]" multiple>
-                <!--all approved user will be shown here-->
-                
-            </select><br><br>
-            
+        <label>Description</label>
+        <textarea name="eventDescription" required></textarea>
 
-            <button type="submit">Create Event</button>
-        </form>
-    </div>
+        <label>All Approved Users</label>
+        <select name="approvedUsers[]" multiple size="6" required>
+            <?php if ($result->num_rows > 0): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <option value="<?= $row['id'] ?>">
+                        <?= htmlspecialchars($row['fullname']) ?> (<?= htmlspecialchars($row['email']) ?>)
+                    </option>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <option disabled>No approved users found</option>
+            <?php endif; ?>
+        </select>
+
+        <button type="submit">Create Event</button>
+    </form>
+</div>
 
 </body>
 </html>
