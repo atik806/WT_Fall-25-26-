@@ -1,7 +1,7 @@
 <?php
 include "../db/db.php";
 
-// Fetch pending requests
+// get pending requests
 $sql = "SELECT * FROM event_requests WHERE status='Pending' ORDER BY event_id DESC";
 $result = $conn->query($sql);
 ?>
