@@ -20,7 +20,7 @@
         <a href="#">Dashboard</a>
         <a href="#">View Events</a>
         <a href="#">My Bookings</a>
-        <a href="#">Request Event</a>
+        <a href="requestEvent.php">Request Event</a>
         <a href="#">Profile</a>
     </div>
 
