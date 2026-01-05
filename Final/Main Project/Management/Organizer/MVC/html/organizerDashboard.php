@@ -12,7 +12,7 @@
             <ul>
                 <li class="active"><a href="organizerDashboard.php">Dashboard</a></li>
                 <li><a href="createEvent.php">Create Event</a></li>
-                <li><a href="#">Manage Events</a></li>
+                <li><a href="manageEvent.php">Manage Events</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Settings</a></li>
                 <li><a href="#">Logout</a></li>
