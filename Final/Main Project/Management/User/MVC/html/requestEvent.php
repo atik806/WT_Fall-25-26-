@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../css/requestEvent.css">
 </head>
 <body>
-    <div class="container">
+    <div class="a">
         <h2>Request an Event</h2>
         <form method="POST" action="../php/requestEvent.php">
             <label for="eventName">Event Name:</label>
