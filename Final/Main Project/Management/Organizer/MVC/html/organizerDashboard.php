@@ -51,19 +51,8 @@ if (!isset($_SESSION['id'])) {
         </h2>
         <p>$12,345</p>
         <p>Upcoming Events</p>
-        <div class="event-list">
-            
-            <div class="event-item">
-                <h3>Sample Event 1</h3>
-                <p>Date: 2024-07-15</p>
-                <p>Location: New York</p>
-                <p>Description: This is a sample event description.</p>
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-            </div>
-        </div>
-
-
+        <?php include "../php/upcomingEvents.php"; ?>
+    
 
     </div>
 
