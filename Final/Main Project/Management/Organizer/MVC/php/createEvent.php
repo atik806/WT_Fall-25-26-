@@ -7,13 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $eventDate = trim($_POST['eventDate']);
     $eventLocation = trim($_POST['eventLocation']);
     $eventDescription = trim($_POST['eventDescription']);
+    $status = 'Pending';
+
 
     if (empty($eventName) || empty($eventDate) || empty($eventLocation) || empty($eventDescription)) {
         die("All fields are required");
     }
 
-    $sql = "INSERT INTO events (event_name, event_date, event_location, event_description)
-            VALUES ('$eventName', '$eventDate', '$eventLocation', '$eventDescription')";
+    $sql = "INSERT INTO events (event_name, event_date, event_location, event_description, status)
+            VALUES ('$eventName', '$eventDate', '$eventLocation', '$eventDescription', '$status')";
 
     if ($conn->query($sql)){
         
