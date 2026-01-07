@@ -1,13 +1,4 @@
-<?php
-session_start();
-include "../db/db.php";
 
-
-if (!isset($_SESSION['id'])) {
-    header("Location: ../html/login.php");
-    exit();
-}
-?>
 
 
 <!DOCTYPE html>
@@ -50,11 +41,17 @@ if (!isset($_SESSION['id'])) {
             Total Revenue
         </h2>
         <p>$12,345</p>
-        <p>Upcoming Events</p>
-        <?php include "../php/upcomingEvents.php"; ?>
-    
+        
 
     </div>
+   <div class="d">
+    <h2>Upcoming Events</h2>
+    <?php include "../php/upcomingEvent.php"; ?>
+    </div>
+    </div>
+
+
+
 
         
 

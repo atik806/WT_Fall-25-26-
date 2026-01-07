@@ -6,7 +6,6 @@ $query = "SELECT * FROM events WHERE status = 'Pending' ORDER BY id DESC";
 $result = $conn->query($query);
    
 
-
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
