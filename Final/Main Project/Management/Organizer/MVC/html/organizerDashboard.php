@@ -27,7 +27,7 @@ if (!isset($_SESSION['id'])) {
                 <li><a href="manageEvent.php">Manage Events</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
 
         </nav>
@@ -40,13 +40,31 @@ if (!isset($_SESSION['id'])) {
             <h1>Organizer Dashboard</h1>
             <div class="profile">
                 <span>Welcome, Organizer</span>
+                
+                
             </div>
         </div>
 
-  
+    <div class="c">
+        <h2>
+            Total Revenue
+        </h2>
+        <p>$12,345</p>
+        <p>Upcoming Events</p>
+        <div class="event-list">
+            <!-- Event items will go here -->
+            <div class="event-item">
+                <h3>Sample Event 1</h3>
+                <p>Date: 2024-07-15</p>
+                <p>Location: New York</p>
+                <p>Description: This is a sample event description.</p>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
         
 
-    </div>
+   
 
 </body>
 </html>
