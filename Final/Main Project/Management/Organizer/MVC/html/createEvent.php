@@ -8,8 +8,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 $sql = "SELECT id, fullname, email 
-        FROM `user` 
-        WHERE request_status = 'Accepted'";
+        FROM `user`";
 
 $result = $conn->query($sql);
 

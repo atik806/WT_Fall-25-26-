@@ -13,7 +13,7 @@ if ($email === '' || $password === '') {
     die("Email and password are required");
 }
 
-// -------------------- USER LOGIN (hashed password) --------------------
+//USER LOGIN
 $sqlUser = "SELECT * FROM user WHERE email = ?";
 $stmtUser = $conn->prepare($sqlUser);
 $stmtUser->bind_param("s", $email);
@@ -34,7 +34,7 @@ if ($resultUser->num_rows === 1) {
     }
 }
 
-// -------------------- ORGANIZER LOGIN (plain password) --------------------
+//ORGANIZER LOGIN
 $sqlOrg = "SELECT * FROM organizer WHERE email = ?";
 $stmtOrg = $conn->prepare($sqlOrg);
 $stmtOrg->bind_param("s", $email);
@@ -44,20 +44,17 @@ $resultOrg = $stmtOrg->get_result();
 if ($resultOrg->num_rows === 1) {
     $organizer = $resultOrg->fetch_assoc();
     if ($password === $organizer['password']) {
+        $_SESSION['id'] = $organizer['id'];
         $_SESSION['organizer_id'] = $organizer['id'];
         $_SESSION['organizer_name'] = $organizer['fullname'];
         $_SESSION['organizer_email'] = $organizer['email'];
-
-        // Optional debug: check if session is set
-        // echo '<pre>'; print_r($_SESSION); echo '</pre>'; exit();
-
-        header("Location: ../html/organizerDashboard.php");
+        header("Location: ../../../Organizer/MVC/html/organizerDashboard.php");
         exit();
     } else {
         die("Invalid email or password");
     }
 }
+// If no match found
 
-// -------------------- NO MATCH --------------------
 die("Invalid email or password");
 ?>
