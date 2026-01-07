@@ -18,7 +18,9 @@
                 <li><a href="manageEvent.php">Manage Events</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Settings</a></li>
+                <li><a href="#">Payment</a></li>
                 <li><a href="logout.php">Logout</a></li>
+                
             </ul>
 
         </nav>
