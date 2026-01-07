@@ -2,7 +2,7 @@
 session_start();
 include "../db/db.php";
 
-// Check if organizer is logged in
+
 if (!isset($_SESSION['id'])) {
     header("Location: ../html/login.php");
     exit();
@@ -52,7 +52,7 @@ if (!isset($_SESSION['id'])) {
         <p>$12,345</p>
         <p>Upcoming Events</p>
         <div class="event-list">
-            <!-- Event items will go here -->
+            
             <div class="event-item">
                 <h3>Sample Event 1</h3>
                 <p>Date: 2024-07-15</p>
@@ -62,6 +62,11 @@ if (!isset($_SESSION['id'])) {
                 <button class="delete-btn">Delete</button>
             </div>
         </div>
+
+
+
+    </div>
+
         
 
    

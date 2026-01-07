@@ -1,4 +1,3 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -17,14 +16,13 @@ h2 {
     color: #333;
 }
 
-/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border-radius: 5px;
-    overflow: hidden;
+    
 }
 
 th, td {
@@ -41,26 +39,27 @@ th {
 tr:hover {
     background-color: #f1f1f1;
 }
-
-/* Action Buttons */
 .action-btn {
-    padding: 6px 12px;
-    border: none;
+    padding: 6px 14px;
     border-radius: 4px;
     cursor: pointer;
     color: #fff;
-    margin-right: 5px;
     font-size: 14px;
+    border: none;
 }
 
 .accept-btn {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
+    border: 1px solid #1e7e34;
 }
 
 .reject-btn {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
+    border: 1px solid #bd2130;
 }
 
 .action-btn:hover {
     opacity: 0.85;
 }
+
+
