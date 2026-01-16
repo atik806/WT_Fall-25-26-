@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+<div class="payment-container">
+    <h2>Event Payment</h2>
+
+    <!-- Event Details -->
+    <div class="card">
+        <h3>Event Details</h3>
+        <p><strong>Event:</strong> Tech Innovation Summit 2026</p>
+        <p><strong>Date:</strong> 20 February 2026</p>
+        <p><strong>Location:</strong> Dhaka Convention Center</p>
+    </div>
+
+</div>
