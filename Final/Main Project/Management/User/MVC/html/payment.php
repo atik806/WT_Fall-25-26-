@@ -17,5 +17,11 @@
         <p><strong>Date:</strong> 20 February 2026</p>
         <p><strong>Location:</strong> Dhaka Convention Center</p>
     </div>
+    <div class="card">
+        <h3>User Information</h3>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Phone Number">
+    </div>
 
 </div>
