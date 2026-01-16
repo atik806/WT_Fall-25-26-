@@ -24,4 +24,20 @@
         <input type="text" placeholder="Phone Number">
     </div>
 
+    <div class="card">
+        <h3>Payment Method</h3>
+        <label>
+            <input type="radio" name="payment" checked>
+            Credit / Debit Card
+        </label>
+        <label>
+            <input type="radio" name="payment">
+            Mobile Banking (bKash / Nagad)
+        </label>
+        <label>
+            <input type="radio" name="payment">
+            Bank Transfer
+        </label>
+    </div>
+
 </div>
