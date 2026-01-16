@@ -40,4 +40,18 @@
         </label>
     </div>
 
+    <div class="card">
+        <h3>Payment Summary</h3>
+        <p>Ticket Price: <span>৳1500</span></p>
+        <p>Service Charge: <span>৳100</span></p>
+        <hr>
+        <p class="total">Total: <span>৳1600</span></p>
+    </div>
+
+    <!-- Pay Button -->
+    <button class="pay-btn">Pay Now</button>
+
 </div>
+
+</body>
+</html>
