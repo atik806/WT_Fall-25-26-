@@ -1,7 +1,13 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
     include "../db/db.php";
 
+    if (!isset($_SESSION['user_id'])) {
+        die("User not logged in");
+    }
+
+    $user_id = $_SESSION['user_id'];
     $eventName = trim($_POST['eventName']);
     $eventDate = trim($_POST['eventDate']);
     $eventLocation = trim($_POST['eventLocation']);
@@ -11,13 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("All fields are required");
     }
 
-    $sql = "INSERT INTO event_requests (event_name, event_date, event_location, event_description, status)
-            VALUES ('$eventName', '$eventDate', '$eventLocation', '$eventDescription', 'pending')";
+    $sql = "INSERT INTO event_requests (user_id, event_name, event_date, event_location, event_description, status)
+            VALUES ($user_id, '$eventName', '$eventDate', '$eventLocation', '$eventDescription', 'pending')";
 
-    if ($conn->query($sql)){
+    if ($conn->query($sql)) {
         echo "<script>
-                alert('Event request submitted successfully! Thank you for contacting us.');
-                window.location.href='../html/userDashboard.php';
+                alert('Event request submitted successfully!');
+                window.location.href='../html/dashboard.php';
               </script>";
         exit();
     } else {
