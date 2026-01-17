@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.payment-container {
+    width: 420px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.payment-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.card input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.card label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.card span {
+    float: right;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pay-btn:hover {
+    background: #0056b3;
+}
