@@ -24,7 +24,6 @@
     </div>
 
     <div class="main-content">
-        <h2>My Bookings</h2>
         <?php include "../php/myBookings.php"; ?>
     </div>
 </div>
