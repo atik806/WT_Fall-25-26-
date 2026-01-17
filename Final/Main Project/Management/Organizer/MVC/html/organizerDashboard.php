@@ -1,6 +1,13 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['organizer_id'])) {
+    header("Location: ../../../User/MVC/html/login.php");
+    exit();
+}
 
-
+$organizerName = isset($_SESSION['organizer_name']) ? $_SESSION['organizer_name'] : 'Organizer';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,12 +21,11 @@
         <nav class = "z">
             <ul>
                 <li class="active"><a href="organizerDashboard.php">Dashboard</a></li>
-                <li><a href="createEvent.php">Create Event</a></li>
                 <li><a href="manageEvent.php">Manage Events</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Payment</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="payment.php">Payment</a></li>
+                <li><a href="../php/logout.php">Logout</a></li>
                 
             </ul>
 
@@ -32,7 +38,7 @@
         <div class="b">
             <h1>Organizer Dashboard</h1>
             <div class="profile">
-                <span>Welcome, Organizer</span>
+                <span>Welcome, <?php echo htmlspecialchars($organizerName); ?></span>
                 
                 
             </div>
