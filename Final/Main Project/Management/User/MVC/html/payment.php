@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    
     <title>Event Payment</title>
-    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="../css/payment.css">
 </head>
 <body>
 
@@ -12,10 +12,8 @@
 
     <!-- Event Details -->
     <div class="card">
-        <h3>Event Details</h3>
-        <p><strong>Event:</strong> Tech Innovation Summit 2026</p>
-        <p><strong>Date:</strong> 20 February 2026</p>
-        <p><strong>Location:</strong> Dhaka Convention Center</p>
+        <h3>Event Details will be shown here from databse </h3>
+        
     </div>
     <div class="card">
         <h3>User Information</h3>
