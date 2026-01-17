@@ -1,17 +1,17 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
-$username = $_SESSION['username'] ?? 'Guest';
+$username = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="../css/userDashboard.css">
 </head>
@@ -23,22 +23,19 @@ $username = $_SESSION['username'] ?? 'Guest';
     <a href="logout.php" class="logout-btn">Logout</a>
 </div>
 
-
 <div class="container">
 
     <div class="sidebar">
-        <a href="#">Dashboard</a>
-        <a href="#">View Events</a>
-        <a href="#">My Bookings</a>
+        <a href="userDashboard.php">Dashboard</a>
+        <a href="viewEvents.php">View Events</a>
+        <a href="myBookingsPage.php">My Bookings</a>
         <a href="requestEvent.php">Request Event</a>
-        <a href="#">Profile</a>
+        <a href="profile.php">Profile</a>
     </div>
-
 
     <div class="main-content">
         <h3>Dashboard</h3>
         <p>Welcome to your user dashboard. Here you can view upcoming events, manage your bookings, and request new events.</p>
-        
     </div>
 
 </div>
