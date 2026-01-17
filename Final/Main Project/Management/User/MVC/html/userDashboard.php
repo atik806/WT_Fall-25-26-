@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../php/login.php");
     exit();
 }
 
@@ -20,7 +20,7 @@ $username = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest';
 <div class="navbar">
     <h2>Event Management System</h2>
     <p>Welcome, <strong><?= htmlspecialchars($username) ?></strong>!</p>
-    <a href="logout.php" class="logout-btn">Logout</a>
+    <a href="../php/logout.php" class="logout-btn">Logout</a>
 </div>
 
 <div class="container">
@@ -28,8 +28,9 @@ $username = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest';
     <div class="sidebar">
         <a href="userDashboard.php">Dashboard</a>
         <a href="viewEvents.php">View Events</a>
-        <a href="myBookingsPage.php">My Bookings</a>
+        <a href="myBookings.php">My Bookings</a>
         <a href="requestEvent.php">Request Event</a>
+        <a href="payment.php">Payment</a>
         <a href="profile.php">Profile</a>
     </div>
 
