@@ -22,8 +22,8 @@ $organizerName = isset($_SESSION['organizer_name']) ? $_SESSION['organizer_name'
             <ul>
                 <li class="active"><a href="organizerDashboard.php">Dashboard</a></li>
                 <li><a href="manageEvent.php">Manage Events</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="../html/profile.php">Profile</a></li>
+                
                 <li><a href="../html/receivedpayment.php">Payment</a></li>
                 <li><a href="../php/logout.php">Logout</a></li>
                 
