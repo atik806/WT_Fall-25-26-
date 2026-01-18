@@ -19,7 +19,7 @@
     <div class="sidebar">
         <a href="dashboard.php">Dashboard</a>
         <a href="events.php">View Events</a>
-        <a href="myBookings.php">My Bookings</a>
+        <a href="myBookings.php" class="active">My Bookings</a>
         <a href="requestEvent.php">Request Event</a>
         <a href="payment.php">Payment</a>
     </div>
