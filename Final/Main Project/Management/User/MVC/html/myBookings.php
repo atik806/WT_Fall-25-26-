@@ -25,12 +25,54 @@
     </div>
 
     <div class="main-content">
+        <h2>All Accepted Bookings</h2>
+        
         <?php include "../php/myBookings.php"; ?>
+        
+        <div style="margin-bottom: 20px;">
+            <form method="GET" style="display: flex; gap: 10px;">
+                <input type="text" name="search" placeholder="Search by event name, location, or user..." value="<?= htmlspecialchars($search ?? '') ?>" style="padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px;">
+                <button type="submit" style="padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Search</button>
+                <a href="myBookings.php" style="padding: 8px 15px; background-color: #666; color: white; text-decoration: none; border-radius: 4px;">Clear</a>
+            </form>
+            
+            <?php if (!empty($search_error)): ?>
+                <p style="color: #d32f2f; margin-top: 10px; font-size: 14px;">⚠️ <?= htmlspecialchars($search_error) ?></p>
+            <?php endif; ?>
+        </div>
+        
+        <?php if (!empty($bookings)): ?>
+            <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+                <tr style="background-color: #4CAF50; color: white;">
+                    <th>Event ID</th>
+                    <th>Event Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Booked By</th>
+                    <th>Email</th>
+                </tr>
+                
+                <?php foreach ($bookings as $booking): ?>
+                    <tr style="background-color: #d4edda;">
+                        <td><?= htmlspecialchars($booking['event_id']) ?></td>
+                        <td><?= htmlspecialchars($booking['event_name']) ?></td>
+                        <td><?= htmlspecialchars($booking['event_date']) ?></td>
+                        <td><?= htmlspecialchars($booking['event_location']) ?></td>
+                        <td><?= htmlspecialchars($booking['event_description']) ?></td>
+                        <td><?= htmlspecialchars($booking['status']) ?></td>
+                        <td><?= htmlspecialchars($booking['fullname'] ?? 'N/A') ?></td>
+                        <td><?= htmlspecialchars($booking['email'] ?? 'N/A') ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php else: ?>
+            <p style="text-align: center; color: #666;">No accepted bookings found.</p>
+        <?php endif; ?>
     </div>
     
 </div>
-
-
 
 </body>
 </html>
