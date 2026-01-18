@@ -29,17 +29,7 @@
         
         <?php include "../php/myBookings.php"; ?>
         
-        <div style="margin-bottom: 20px;">
-            <form method="GET" style="display: flex; gap: 10px;">
-                <input type="text" name="search" placeholder="Search by event name, location, or user..." value="<?= htmlspecialchars($search ?? '') ?>" style="padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px;">
-                <button type="submit" style="padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Search</button>
-                <a href="myBookings.php" style="padding: 8px 15px; background-color: #666; color: white; text-decoration: none; border-radius: 4px;">Clear</a>
-            </form>
-            
-            <?php if (!empty($search_error)): ?>
-                <p style="color: #d32f2f; margin-top: 10px; font-size: 14px;">⚠️ <?= htmlspecialchars($search_error) ?></p>
-            <?php endif; ?>
-        </div>
+        
         
         <?php if (!empty($bookings)): ?>
             <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
