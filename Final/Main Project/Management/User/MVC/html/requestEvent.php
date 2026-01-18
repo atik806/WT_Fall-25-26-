@@ -18,59 +18,23 @@ $username = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest';
 <body>
 
 
-
-
     <div class="main-content">
         <h2>Request an Event</h2>
 
-        <!-- Events We Are Working On -->
-        <div class="working-events">
-            <h3>Events We Are Working On</h3>
-            <table class="event-list">
-                <tr>
-                    <th>Event Name</th>
-                    <th>Total Cost</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>Corporate Seminar</td>
-                    <td>৳45,000</td>
-                    <td><button class="btn-select" onclick="selectEvent('Corporate Seminar', '45000')">Select</button></td>
-                </tr>
-                <tr>
-                    <td>Wedding Ceremony</td>
-                    <td>৳125,000</td>
-                    <td><button class="btn-select" onclick="selectEvent('Wedding Ceremony', '125000')">Select</button></td>
-                </tr>
-                <tr>
-                    <td>Music Concert</td>
-                    <td>৳300,000</td>
-                    <td><button class="btn-select" onclick="selectEvent('Music Concert', '300000')">Select</button></td>
-                </tr>
-                <tr>
-                    <td>Charity Fundraiser</td>
-                    <td>৳60,000</td>
-                    <td><button class="btn-select" onclick="selectEvent('Charity Fundraiser', '60000')">Select</button></td>
-                </tr>
-                <tr>
-                    <td>Tech Conference</td>
-                    <td>৳72,000</td>
-                    <td><button class="btn-select" onclick="selectEvent('Tech Conference', '72000')">Select</button></td>
-                </tr>
-                <tr>
-                    <td>Food Festival</td>
-                    <td>৳240,000</td>
-                    <td><button class="btn-select" onclick="selectEvent('Food Festival', '240000')">Select</button></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- Request Form -->
+       
         <div class="request-form">
             <h3>Request Details</h3>
             <form method="POST" action="../php/requestEvent.php">
-                <label for="eventName">Event Name:</label>
-                <input type="text" id="eventName" name="eventName" required>
+                <label for="eventName">Select Event Name:</label>
+                <select id="eventName" name="eventName" required>
+                    <option value="">-- Choose an event --</option>
+                    <option value="Corporate Seminar">Corporate Seminar (৳45,000)</option>
+                    <option value="Wedding Ceremony">Wedding Ceremony (৳125,000)</option>
+                    <option value="Music Concert">Music Concert (৳300,000)</option>
+                    <option value="Charity Fundraiser">Charity Fundraiser (৳60,000)</option>
+                    <option value="Tech Conference">Tech Conference (৳72,000)</option>
+                    <option value="Food Festival">Food Festival (৳240,000)</option>
+                </select>
 
                 <label for="eventDate">Event Date:</label>
                 <input type="date" id="eventDate" name="eventDate" required>
@@ -86,12 +50,6 @@ $username = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest';
         </div>
     </div>
 </div>
-
-<script>
-    function selectEvent(eventName, cost) {
-        document.getElementById('eventName').value = eventName;
-    }
-</script>
 
 </body>
 </html>
