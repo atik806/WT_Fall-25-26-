@@ -27,7 +27,10 @@
     <div class="main-content">
         <?php include "../php/myBookings.php"; ?>
     </div>
+    
 </div>
+
+
 
 </body>
 </html>
