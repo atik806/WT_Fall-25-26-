@@ -24,7 +24,7 @@ $organizerName = isset($_SESSION['organizer_name']) ? $_SESSION['organizer_name'
                 <li><a href="manageEvent.php">Manage Events</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="payment.php">Payment</a></li>
+                <li><a href="../html/receivedpayment.php">Payment</a></li>
                 <li><a href="../php/logout.php">Logout</a></li>
                 
             </ul>
@@ -46,9 +46,9 @@ $organizerName = isset($_SESSION['organizer_name']) ? $_SESSION['organizer_name'
 
     <div class="c">
         <h2>
-            Total Revenue
+            
         </h2>
-        <p>$12,345</p>
+        <p></p>
         
 
     </div>

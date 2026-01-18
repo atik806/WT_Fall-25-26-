@@ -49,11 +49,7 @@ $userEmail = $_SESSION['user_email'] ?? '';
             </div>
         <?php endif; ?>
 
-        <!-- Search Box -->
-        <div class="search-box">
-            <input type="text" placeholder="Search events...">
-            <button>Search</button>
-        </div>
+        
 
         <form method="POST">
             <div class="card">
@@ -80,12 +76,22 @@ $userEmail = $_SESSION['user_email'] ?? '';
                 <label><input type="radio" name="payment_method" value="Mobile Banking"> Mobile Banking</label>
                 <label><input type="radio" name="payment_method" value="Bank Transfer"> Bank Transfer</label>
             </div>
+            <div>
+                <h3>
+                    Transaction ID:
+                </h3>
+                <input type="text" name="transaction_id" placeholder="Enter transaction ID" required>
+                
+            </div>
 
             <div class="card">
                 <h3>Payment Summary</h3>
-                <p>Ticket Price: ৳1500</p>
-                <p>Service Charge: ৳100</p>
-                <p><strong>Total Amount: ৳1600</strong></p>
+                         <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && $selected_cost > 0): ?>
+        <p>Event: <?= htmlspecialchars($event_name) ?></p>
+        <p>Amount: Tk <?= htmlspecialchars($selected_cost) ?></p>
+    <?php else: ?>
+        <p>Select an event to see payment details</p>
+    <?php endif; ?>
             </div>
 
             <button type="submit">Pay Now</button>

@@ -27,11 +27,12 @@ $username = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest';
 
     <div class="sidebar">
         <a href="userDashboard.php">Dashboard</a>
-        <a href="viewEvents.php">View Events</a>
+        <a href="events.php">View Events</a>
         <a href="myBookings.php">My Bookings</a>
         <a href="requestEvent.php">Request Event</a>
         <a href="payment.php">Payment</a>
         <a href="profile.php">Profile</a>
+        <a href="#">Update Profile</a>
     </div>
 
     <div class="main-content">
