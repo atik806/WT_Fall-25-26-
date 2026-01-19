@@ -1,0 +1,86 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+.a {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.a h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.profile-container {
+    background: #ffffff;
+    width: 400px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccd1d9;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
